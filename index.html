@@ -270,17 +270,6 @@
             opacity: 0.8;
         }
 
-        /* ESTILO ESPECIAL PARA TARJETAS FIJADAS */
-        .card.pinned {
-            background: linear-gradient(135deg, rgba(20, 20, 20, 0.98), rgba(8, 8, 8, 0.95));
-            border: 1px solid #ffffff;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.95), 0 0 18px rgba(255, 255, 255, 0.15);
-        }
-        .card.pinned::before {
-            background: linear-gradient(180deg, #ffffff, #666666);
-            width: 6px;
-        }
-
         .card-header {
             display: flex;
             justify-content: space-between;
@@ -293,7 +282,6 @@
         .tag-group { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
         .tag-tested { background: linear-gradient(135deg, #181818, #080808); color: #ffffff; border: 1px solid #333; font-size: 11px; font-weight: 900; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }
         .tag-new { background: linear-gradient(135deg, #333333, #111111); color: #ffffff; border: 1px solid #555; font-size: 11px; font-weight: 900; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }
-        .tag-pinned { background: linear-gradient(135deg, #ffffff, #777777); color: #000000; font-size: 11px; font-weight: 900; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; box-shadow: 0 0 10px rgba(255,255,255,0.3); }
         
         .card-att {
             margin-top: 12px;
@@ -370,7 +358,29 @@
         .btn-secondary-wa { background: linear-gradient(135deg, #222222, #0a0a0a); border: 1px solid #444; color: #ffffff; margin-bottom: 10px; border-radius: 16px; font-size: 15px; padding: 15px; }
         .btn-tiktok { background: linear-gradient(135deg, #111111, #000000); border: 1px solid #333; color: #ffffff; margin-bottom: 10px; border-radius: 16px; font-size: 15px; padding: 15px; }
         .btn-youtube { background: linear-gradient(135deg, #1a1a1a, #050505); border: 1px solid #333; color: #ffffff; margin-bottom: 20px; border-radius: 16px; font-size: 15px; padding: 15px; }
-        .btn-goto { background: linear-gradient(135deg, #444444, #0a0a0a); border: 1px solid #666; color: #ffffff; margin-top: 15px; margin-bottom: 20px; border-radius: 16px; font-size: 16px; padding: 16px; box-shadow: 0 0 25px rgba(0, 0, 0, 0.9); }
+        
+        /* BOTÓN DE DESCARGAS GRANDE Y REDISEÑADO */
+        .btn-goto { 
+            background: linear-gradient(135deg, #2a2a2a, #0d0d0d); 
+            border: 2px solid #888888; 
+            color: #ffffff; 
+            margin-top: 25px; 
+            margin-bottom: 25px; 
+            border-radius: 20px; 
+            font-size: 18px; 
+            font-weight: 900;
+            padding: 20px 22px; 
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.15), 0 10px 30px rgba(0, 0, 0, 0.95);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-goto:hover {
+            border-color: #ffffff;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.3), 0 12px 35px rgba(0, 0, 0, 1);
+            transform: translateY(-3px) scale(1.02);
+        }
+
         .btn-back { background: rgba(20, 20, 20, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); color: #aaaaaa; margin-bottom: 20px; border-radius: 14px; font-size: 14px; padding: 12px; }
 
         .btn-mediafire { background: linear-gradient(135deg, #222222, #0a0a0a); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff; }
@@ -551,36 +561,12 @@
 
             <span class="counter-badge" id="card-counter">📌 ARCHIVOS DISPONIBLES (Máx. 15)</span>
 
-            <!-- SECCIÓN DE FIJADOS -->
-            <div class="section-title">📌 Archivos Fijados</div>
-
             <div id="cardsContainer">
 
-                <!-- TARJETA FIJADA -->
-                <div class="card pinned" id="card-carlos-mods-v20">
-                    <div class="card-header">
-                        <span class="card-date">📅 FIJADO: OFICIAL</span>
-                        <div class="tag-group">
-                            <span class="tag-pinned">📌 FIJADO</span>
-                            <span class="tag-tested">✅ FULL SOLO NORTE AMÉRICA</span>
-                        </div>
-                    </div>
-                    <h3>⚡ CARLOS MODS V20 👑</h3>
-                    <p>• 📶 <b>Optimización de lag y estabilidad avanzada.</b><br>
-                    • ⚠️ <b>NOTA IMPORTANTE:</b> FULL SOLO NORTE AMÉRICA.</p>
-                    
-                    <button class="btn btn-mediafire" onclick="startDownloadWithTimer('https://www.mediafire.com/file/2hswv7nzcd71una/ꜰᴀᴋᴇ+ʟᴀɢ+ᴠ20👑.apk/file')">📥 Descargar Carlos Mods V20 (.apk)</button>
-                    
-                    <div class="card-att">
-                        <span class="att-text">@andresk1ng</span>
-                        <button class="share-card-btn" onclick="shareCard('card-carlos-mods-v20', '⚡ CARLOS MODS V20 (NORTE AMÉRICA)')">🔗 Compartir</button>
-                    </div>
-                </div>
-
                 <!-- SECCIÓN GENERAL -->
-                <div class="section-title" style="margin-top: 25px;">📂 Todos los Archivos</div>
+                <div class="section-title">📂 Todos los Archivos</div>
 
-                <!-- NUEVA TARJETA: ROOT TEMPORAL BY ANDRESK1NG -->
+                <!-- ROOT TEMPORAL BY ANDRESK1NG -->
                 <div class="card" id="card-root-temp-andresk1ng">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: NUEVO</span>
@@ -891,6 +877,34 @@
                     <div class="card-att">
                         <span class="att-text">@andresk1ng</span>
                         <button class="share-card-btn" onclick="shareCard('card-holograma-rgb', '👻 HOLOGRAMA RGB CUENTAS PRINCIPALES')">🔗 Compartir</button>
+                    </div>
+                </div>
+
+                <div class="card" id="card-kurama-17">
+                    <div class="card-header">
+                        <span class="card-date">📅 SUBIDO: RECIENTE</span>
+                        <div class="tag-group">
+                            <span class="tag-new">🔥 KURAMA 1.7</span>
+                            <span class="tag-tested">✅ NO ROOT / SAFE</span>
+                        </div>
+                    </div>
+                    <h3>⚡ KURAMA MODS V1.7 (NO ROOT) 🛡️</h3>
+                    <p>• ✅ <b>Aim Legit</b><br>
+                    • ✅ <b>Esp Location</b><br>
+                    • ✅ <b>Freeze</b> (When firing & scoping)<br>
+                    • 🛡️ <b>Main ID Safe All Servers</b> (Free Fire & Max Play Store)</p>
+                    
+                    <div class="key-container">
+                        <span class="key-text">🔑 KEY: <b>KURAMAMODS24H</b></span>
+                        <button class="copy-btn" onclick="navigator.clipboard.writeText('KURAMAMODS24H').then(()=>alert('✅ ¡Key copiada con éxito!'))">Copiar Key</button>
+                    </div>
+
+                    <button class="btn btn-mediafire" onclick="startDownloadWithTimer('https://www.mediafire.com/file/nwqewv9jwqn2gug/KuramaMods+1.7+BY+KRISHNA.apk/file')">📥 Descargar Kurama Mods V1.7 (.apk)</button>
+                    <a href="https://youtube.com/shorts/q9XUdOwKlVg?si=Atw7JLBEAD2BmtEa" target="_blank" class="btn btn-key">▶️ GET KEY VIDEO (TUTORIAL)</a>
+                    
+                    <div class="card-att">
+                        <span class="att-text">@andresk1ng</span>
+                        <button class="share-card-btn" onclick="shareCard('card-kurama-17', '⚡ KURAMA MODS V1.7 (NO ROOT)')">🔗 Compartir</button>
                     </div>
                 </div>
 
