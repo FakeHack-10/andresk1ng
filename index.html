@@ -270,6 +270,18 @@
             opacity: 0.8;
         }
 
+        /* ESTILO RESALTADO PARA TARJETA FIJADA */
+        .card.pinned-card {
+            background: linear-gradient(135deg, rgba(28, 28, 28, 0.98), rgba(10, 10, 10, 0.95));
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2), 0 10px 35px rgba(0, 0, 0, 0.95);
+        }
+
+        .card.pinned-card::before {
+            width: 6px;
+            background: linear-gradient(180deg, #ffffff, #888888);
+        }
+
         .card-header {
             display: flex;
             justify-content: space-between;
@@ -280,6 +292,7 @@
         .card-date { font-size: 12px; color: #666666; font-weight: 800; }
 
         .tag-group { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+        .tag-pinned { background: linear-gradient(135deg, #ffffff, #aaaaaa); color: #000000; font-size: 11px; font-weight: 900; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); }
         .tag-tested { background: linear-gradient(135deg, #181818, #080808); color: #ffffff; border: 1px solid #333; font-size: 11px; font-weight: 900; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }
         .tag-new { background: linear-gradient(135deg, #333333, #111111); color: #ffffff; border: 1px solid #555; font-size: 11px; font-weight: 900; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }
         
@@ -487,7 +500,7 @@
 
             <div class="announcement-banner" id="announcementBanner">
                 <div class="announcement-text" id="bannerTextContent">
-                    📢 <b>AVISO @andresk1ng:</b> ¡LIBERDADE 3.1 X64 Y DRIVER GT 3.0 DISPONIBLES! 👑🔥
+                    📌 <b>ARCHIVOS DESTACADOS:</b> ¡ROOT TEMPORAL FIJADO & NUEVOS PANELES DISPONIBLES! ⚡📁
                 </div>
                 <button class="announcement-close" onclick="closeBanner()">✕</button>
             </div>
@@ -566,7 +579,30 @@
                 <!-- SECCIÓN GENERAL -->
                 <div class="section-title">📂 Todos los Archivos</div>
 
-                <!-- NUEVA TARJETA: LIBERDADE 3.1 & DRIVER GT 3.0 -->
+                <!-- TARJETA FIJADA Y RESALTADA: ROOT TEMPORAL BY ANDRESK1NG -->
+                <div class="card pinned-card" id="card-root-temp-andresk1ng">
+                    <div class="card-header">
+                        <span class="card-date">📅 SUBIDO: RECIENTE</span>
+                        <div class="tag-group">
+                            <span class="tag-pinned">📌 FIJADO</span>
+                            <span class="tag-new">⚡ ROOT TEMPORAL</span>
+                            <span class="tag-tested">📱 KERNEL SU</span>
+                        </div>
+                    </div>
+                    <h3>⚡ ROOT TEMPORAL BY ANDRESK1NG 📁</h3>
+                    <p>• 📦 <b>Incluye tutos y aplicaciones requeridas.</b><br>
+                    • ⚡ <b>2 KernelSU:</b> 1 optimizado para Samsung y 1 para otras marcas.<br>
+                    • 💡 <i>Si no les sirve a la primera, vuelvan a probar después de 1 hora.</i></p>
+
+                    <button class="btn btn-mediafire" onclick="startDownloadWithTimer('https://www.mediafire.com/file/gekqru8tpqu9dho/ROOT+TEMP+BY+ANDRESK1NG.7z/file')">📥 Descargar Root Temp (.7z)</button>
+                    
+                    <div class="card-att">
+                        <span class="att-text">@andresk1ng</span>
+                        <button class="share-card-btn" onclick="shareCard('card-root-temp-andresk1ng', '⚡ ROOT TEMPORAL BY ANDRESK1NG')">🔗 Compartir</button>
+                    </div>
+                </div>
+
+                <!-- LIBERDADE 3.1 & DRIVER GT 3.0 -->
                 <div class="card" id="card-liberdade-v31">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: NUEVO</span>
@@ -658,28 +694,6 @@
                     <div class="card-att">
                         <span class="att-text">@andresk1ng</span>
                         <button class="share-card-btn" onclick="shareCard('card-proxy-mth-v32', '🔥 PROXY MTH V32 (CALCULADORA V32.0)')">🔗 Compartir</button>
-                    </div>
-                </div>
-
-                <!-- ROOT TEMPORAL BY ANDRESK1NG -->
-                <div class="card" id="card-root-temp-andresk1ng">
-                    <div class="card-header">
-                        <span class="card-date">📅 SUBIDO: RECIENTE</span>
-                        <div class="tag-group">
-                            <span class="tag-new">⚡ ROOT TEMPORAL</span>
-                            <span class="tag-tested">📱 KERNEL SU</span>
-                        </div>
-                    </div>
-                    <h3>⚡ ROOT TEMPORAL BY ANDRESK1NG 📁</h3>
-                    <p>• 📦 <b>Incluye tutos y aplicaciones requeridas.</b><br>
-                    • ⚡ <b>2 KernelSU:</b> 1 optimizado para Samsung y 1 para otras marcas.<br>
-                    • 💡 <i>Si no les sirve a la primera, vuelvan a probar después de 1 hora.</i></p>
-
-                    <button class="btn btn-mediafire" onclick="startDownloadWithTimer('https://www.mediafire.com/file/gekqru8tpqu9dho/ROOT+TEMP+BY+ANDRESK1NG.7z/file')">📥 Descargar Root Temp (.7z)</button>
-                    
-                    <div class="card-att">
-                        <span class="att-text">@andresk1ng</span>
-                        <button class="share-card-btn" onclick="shareCard('card-root-temp-andresk1ng', '⚡ ROOT TEMPORAL BY ANDRESK1NG')">🔗 Compartir</button>
                     </div>
                 </div>
 
