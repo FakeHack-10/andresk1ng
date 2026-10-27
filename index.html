@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@andresk1ng - Official Web</title>
-    <!-- FUENTE GAMER / CYBERPUNK -->
+    <!-- FUENTE GAMER / ESTILO SEMI-CURSIVO LEGIBLE (Caveat / Rajdhani) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700;800;900&family=Sacramento&display=stylesheet" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Rajdhani:wght@600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -30,6 +30,16 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Rajdhani', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* ESTILO DE LETRA SEMI-CURSIVO LEGIBLE PARA LOS TEXTOS DE LAS TARJETAS Y DESCRIPCIONES */
+        p, .card p, .key-text, .badge, .server-status, .search-box, .btn {
+            font-family: 'Caveat', cursive, 'Rajdhani', sans-serif;
+            letter-spacing: 0.5px;
+        }
+
+        h1, h3, .card h3, .section-title, .counter-badge {
+            font-family: 'Rajdhani', sans-serif;
         }
 
         body {
@@ -72,12 +82,12 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 11px;
-            font-weight: 800;
-            color: #777777;
+            font-size: 13px;
+            font-weight: 700;
+            color: #888888;
             background: rgba(10, 10, 10, 0.95);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 4px 12px;
+            padding: 4px 14px;
             border-radius: 20px;
             margin-bottom: 12px;
             margin-top: 15px;
@@ -148,12 +158,12 @@
             align-items: center;
             gap: 6px;
             background: rgba(10, 10, 10, 0.95);
-            color: #aaaaaa;
+            color: #bbbbbb;
             border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 5px 16px;
             border-radius: 20px;
-            font-size: 13px;
-            font-weight: 800;
+            font-size: 16px;
+            font-weight: 700;
             margin-top: 6px;
             margin-bottom: 14px;
             backdrop-filter: blur(12px);
@@ -172,11 +182,11 @@
         }
 
         p.desc {
-            color: #888888;
-            font-size: 15px;
+            color: #999999;
+            font-size: 19px;
             margin-bottom: 16px;
-            line-height: 1.4;
-            font-weight: 600;
+            line-height: 1.3;
+            font-weight: 700;
         }
 
         .search-box {
@@ -186,7 +196,7 @@
             border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 14px;
             color: #ffffff;
-            font-size: 14px;
+            font-size: 17px;
             font-weight: 700;
             margin-bottom: 18px;
             outline: none;
@@ -200,7 +210,7 @@
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
         }
 
-        .search-box::placeholder { color: #444444; }
+        .search-box::placeholder { color: #555555; }
 
         .section-title {
             font-size: 15px;
@@ -276,8 +286,8 @@
             color: #aaaaaa;
             padding: 5px 12px;
             border-radius: 10px;
-            font-size: 11.5px;
-            font-weight: 800;
+            font-size: 13px;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.2s ease;
             display: inline-flex;
@@ -292,7 +302,7 @@
         }
 
         .card h3 { font-size: 19px; color: #ffffff; margin-bottom: 8px; font-weight: 900; letter-spacing: 0.5px; text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); }
-        .card p { font-size: 14.5px; color: #aaaaaa; margin-bottom: 12px; line-height: 1.4; font-weight: 600; }
+        .card p { font-size: 18px; color: #cccccc; margin-bottom: 12px; line-height: 1.350; font-weight: 700; }
 
         .key-container {
             display: flex; align-items: center; justify-content: space-between;
@@ -300,18 +310,18 @@
             padding: 10px 14px; border-radius: 14px; margin-top: 10px; gap: 8px;
         }
 
-        .key-text { color: #ffffff; font-weight: 800; font-size: 14px; word-break: break-all; }
+        .key-text { color: #ffffff; font-weight: 700; font-size: 17px; word-break: break-all; }
 
         .copy-btn {
             background: linear-gradient(135deg, #333333, #111111);
             color: #ffffff; border: 1px solid #555; padding: 8px 16px; border-radius: 10px;
-            font-size: 12px; font-weight: 900; cursor: pointer; transition: all 0.25s ease; white-space: nowrap;
+            font-size: 13px; font-weight: 700; cursor: pointer; transition: all 0.25s ease; white-space: nowrap;
         }
 
         .btn {
             display: flex; align-items: center; justify-content: center; gap: 10px;
             width: 100%; padding: 14px 16px; border-radius: 14px; text-decoration: none;
-            font-weight: 900; font-size: 14.5px; text-align: center; cursor: pointer;
+            font-weight: 700; font-size: 17px; text-align: center; cursor: pointer;
             transition: all 0.25s ease; margin-top: 9px; border: none;
         }
 
@@ -323,9 +333,9 @@
         }
 
         .btn:hover { transform: translateY(-2px); filter: brightness(1.25); }
-        .btn-main { background: linear-gradient(135deg, #1a1a1a, #000000); border: 1px solid #444; color: #ffffff; margin-bottom: 10px; border-radius: 16px; font-size: 15px; padding: 15px; }
-        .btn-secondary-wa { background: linear-gradient(135deg, #222222, #0a0a0a); border: 1px solid #444; color: #ffffff; margin-bottom: 10px; border-radius: 16px; font-size: 15px; padding: 15px; }
-        .btn-tiktok { background: linear-gradient(135deg, #111111, #000000); border: 1px solid #333; color: #ffffff; margin-bottom: 10px; border-radius: 16px; font-size: 15px; padding: 15px; }
+        .btn-main { background: linear-gradient(135deg, #1a1a1a, #000000); border: 1px solid #444; color: #ffffff; margin-bottom: 10px; border-radius: 16px; font-size: 17px; padding: 15px; }
+        .btn-secondary-wa { background: linear-gradient(135deg, #222222, #0a0a0a); border: 1px solid #444; color: #ffffff; margin-bottom: 10px; border-radius: 16px; font-size: 17px; padding: 15px; }
+        .btn-tiktok { background: linear-gradient(135deg, #111111, #000000); border: 1px solid #333; color: #ffffff; margin-bottom: 10px; border-radius: 16px; font-size: 17px; padding: 15px; }
         
         /* BOTÓN DE DESCARGAS GRANDE Y REDISEÑADO */
         .btn-goto { 
@@ -335,8 +345,8 @@
             margin-top: 25px; 
             margin-bottom: 25px; 
             border-radius: 20px; 
-            font-size: 18px; 
-            font-weight: 900;
+            font-size: 19px; 
+            font-weight: 800;
             padding: 20px 22px; 
             box-shadow: 0 0 30px rgba(255, 255, 255, 0.15), 0 10px 30px rgba(0, 0, 0, 0.95);
             letter-spacing: 1px;
@@ -349,7 +359,7 @@
             transform: translateY(-3px) scale(1.02);
         }
 
-        .btn-back { background: rgba(20, 20, 20, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); color: #aaaaaa; margin-bottom: 20px; border-radius: 14px; font-size: 14px; padding: 12px; }
+        .btn-back { background: rgba(20, 20, 20, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); color: #aaaaaa; margin-bottom: 20px; border-radius: 14px; font-size: 16px; padding: 12px; }
 
         .btn-mediafire { background: linear-gradient(135deg, #222222, #0a0a0a); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff; }
         .btn-key { background: linear-gradient(135deg, #333333, #111111); border: 1px solid #555; color: #ffffff; }
@@ -428,7 +438,7 @@
         .view-section { display: none; }
         .view-section.active { display: block; }
 
-        footer { margin-top: 30px; padding-bottom: 12px; font-size: 13px; color: #555555; font-weight: 700; }
+        footer { margin-top: 30px; padding-bottom: 12px; font-size: 15px; color: #555555; font-weight: 700; }
     </style>
 </head>
 <body class="no-select">
@@ -522,10 +532,37 @@
                 <!-- SECCIÓN GENERAL -->
                 <div class="section-title">📂 Todos los Archivos</div>
 
-                <!-- NUEVA TARJETA: KURAMA MOD -->
-                <div class="card" id="card-kurama-mod">
+                <!-- NUEVA TARJETA: GRINGO XP PROXY VPN V3 -->
+                <div class="card" id="card-gringo-xp-v3">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: NUEVO</span>
+                        <div class="tag-group">
+                            <span class="tag-new">⚡ GRINGO XP V3</span>
+                            <span class="tag-tested">🔥 PROXY VPN</span>
+                        </div>
+                    </div>
+                    <h3>⚡ 𝙂𝙍𝙄𝙉𝙂𝙊 𝙓𝙋 𝙋𝙍𝙊𝙓𝙔 𝙑𝙋𝙉 𝙑3 ⚡</h3>
+                    <p>• 🔑 <b>Genera tu key adentro del APK.</b><br>
+                    • 🎯 <b>Aim Collider:</b> Pescoço, cabeça, peito<br>
+                    • 👁️ <b>ESP Marker:</b> Moco<br>
+                    • 📍 <b>ESP Draw:</b> Line, Box, Distance<br>
+                    • ⚡ <b>ESP Koda:</b> Ray X<br>
+                    • 🪽 <b>Fly Hack:</b> HitFly | 🥶 Freeze | 👻 Ghost | 🌀 Teleport<br>
+                    • 💡 <i>Si te banea en tu región cámbiate a Norte América.</i></p>
+
+                    <button class="btn btn-mediafire" onclick="startDownloadWithTimer('https://www.mediafire.com/file/wczajk8wkpfq19d/GRINGO+XP+PROXY+VPN+V3.apk/file')">📥 Descargar Gringo XP V3 (.apk)</button>
+                    <a href="https://whatsapp.com/channel/0029Vb8MejvKLaHfkVTKNL2L" target="_blank" class="btn btn-key" style="background: linear-gradient(135deg, #128c7e, #075e54);">📌 Canal de Actualizaciones (WhatsApp)</a>
+                    
+                    <div class="card-att">
+                        <span class="att-text">@andresk1ng</span>
+                        <button class="share-card-btn" onclick="shareCard('card-gringo-xp-v3', '⚡ 𝙂𝙍𝙄𝙉𝙂𝙊 𝙓𝙋 𝙋𝙍𝙊𝙓𝙔 𝙑𝙋𝙉 𝙑3')">🔗 Compartir</button>
+                    </div>
+                </div>
+
+                <!-- TARJETA: KURAMA MOD -->
+                <div class="card" id="card-kurama-mod">
+                    <div class="card-header">
+                        <span class="card-date">📅 SUBIDO: RECIENTE</span>
                         <div class="tag-group">
                             <span class="tag-new">☯️ KURAMA MOD</span>
                             <span class="tag-tested">🔥 FF NORMAL</span>
@@ -917,7 +954,7 @@
         <div class="timer-box">
             <h3 style="color: #ffffff; font-weight: 950; text-shadow: 0 0 10px rgba(255,255,255,0.3);">BAT GENERANDO ACCESO SEGURO...</h3>
             <div class="timer-number" id="timerCount">5</div>
-            <p style="color: #888888; font-size: 13px; font-weight: 700;">Redirigiendo al servidor de descarga...</p>
+            <p style="color: #888888; font-size: 14px; font-weight: 700;">Redirigiendo al servidor de descarga...</p>
         </div>
     </div>
 
