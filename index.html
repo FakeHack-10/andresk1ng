@@ -327,6 +327,44 @@
         .btn-secondary-wa { background: linear-gradient(135deg, #222222, #0a0a0a); border: 1px solid #444; color: #ffffff; margin-bottom: 10px; border-radius: 16px; font-size: 15px; padding: 15px; }
         .btn-tiktok { background: linear-gradient(135deg, #111111, #000000); border: 1px solid #333; color: #ffffff; margin-bottom: 10px; border-radius: 16px; font-size: 15px; padding: 15px; }
         
+        /* CONTROLES DE PAGINACIÓN */
+        .pagination-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0 10px 0;
+            gap: 10px;
+        }
+
+        .page-btn {
+            background: linear-gradient(135deg, #222, #080808);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-weight: 900;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .page-btn:hover:not(:disabled) {
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .page-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .page-indicator {
+            font-size: 13px;
+            font-weight: 800;
+            color: #aaaaaa;
+            letter-spacing: 1px;
+        }
+        
         /* BOTÓN DE DESCARGAS GRANDE Y REDISEÑADO */
         .btn-goto { 
             background: linear-gradient(135deg, #2a2a2a, #0d0d0d); 
@@ -515,17 +553,24 @@
 
             <input type="text" id="searchInput" class="search-box" placeholder="🔍 Buscar archivo, proxy o mod..." onkeyup="filterCards()">
 
-            <span class="counter-badge" id="card-counter">📌 ARCHIVOS DISPONIBLES (Máx. 15)</span>
+            <span class="counter-badge" id="card-counter">📌 ARCHIVOS TOTALES: 15 (15 por página)</span>
+
+            <!-- CONTROLES DE PAGINACIÓN SUPERIOR -->
+            <div class="pagination-container" id="paginationControlsTop">
+                <button class="page-btn" id="prevBtnTop" onclick="changePage(-1)">⬅️ ANTERIOR</button>
+                <span class="page-indicator" id="pageIndicatorTop">PÁGINA 1 DE 1</span>
+                <button class="page-btn" id="nextBtnTop" onclick="changePage(1)">SIGUIENTE ➡️</button>
+            </div>
 
             <div id="cardsContainer">
 
                 <!-- SECCIÓN GENERAL -->
                 <div class="section-title">📂 Todos los Archivos</div>
 
-                <!-- NUEVA TARJETA: P2077KNG + BYPASS -->
+                <!-- TARJETA 1: P2077KNG + BYPASS -->
                 <div class="card" id="card-p2077kng-bypass">
                     <div class="card-header">
-                        <span class="card-date">📅 SUBIDO: NUEVO</span>
+                        <span class="card-date">📅 SUBIDO: RECIENTE</span>
                         <div class="tag-group">
                             <span class="tag-new">👑 P2077KNG</span>
                             <span class="tag-tested">🔥 ROOT O VIRTUAL</span>
@@ -554,7 +599,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVA TARJETA: PAINEL PROXY V15 -->
+                <!-- TARJETA 2: PAINEL PROXY V15 -->
                 <div class="card" id="card-painel-proxy-v15">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: RECIENTE</span>
@@ -578,7 +623,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVA TARJETA: PACK DE TEXTURAS 7D PANTERA ROSA Y SONIC -->
+                <!-- TARJETA 3: PACK DE TEXTURAS 7D -->
                 <div class="card" id="card-pack-texturas-7d">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: RECIENTE</span>
@@ -601,7 +646,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVA TARJETA: VELQERIX PROXY V1.4 -->
+                <!-- TARJETA 4: VELQERIX PROXY V1.4 -->
                 <div class="card" id="card-velqerix-proxy-v14">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: RECIENTE</span>
@@ -626,7 +671,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVA TARJETA: DRIP CLIENT SKINS UNLOCKED -->
+                <!-- TARJETA 5: DRIP CLIENT SKINS UNLOCKED -->
                 <div class="card" id="card-drip-client-skins">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: RECIENTE</span>
@@ -655,7 +700,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVA TARJETA: BYPASS V5 MORPLAY12 & INJECT VIP V2 -->
+                <!-- TARJETA 6: BYPASS V5 MORPLAY12 -->
                 <div class="card" id="card-bypass-v5-morplay12">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: RECIENTE</span>
@@ -684,7 +729,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVA TARJETA: VALI MODS V86 BRUTAL -->
+                <!-- TARJETA 7: VALI MODS V86 -->
                 <div class="card" id="card-vali-mods-v86">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: RECIENTE</span>
@@ -706,7 +751,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVA TARJETA: COMBO BR CLASIFICATORIA -->
+                <!-- TARJETA 8: COMBO BR CLASIFICATORIA -->
                 <div class="card" id="card-combo-br-clasificatoria">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: RECIENTE</span>
@@ -733,7 +778,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVA TARJETA: PANEL FFH4X WIRE -->
+                <!-- TARJETA 9: PANEL FFH4X WIRE -->
                 <div class="card" id="card-ffh4x-wire">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: RECIENTE</span>
@@ -759,7 +804,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVA TARJETA: P20 ROOT MODE SAFE ANTIBAN -->
+                <!-- TARJETA 10: P20 ROOT SAFE -->
                 <div class="card" id="card-p20-root-safe-antiban">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: RECIENTE</span>
@@ -790,7 +835,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVA TARJETA: PROXY GRINDO FULL V4 -->
+                <!-- TARJETA 11: PROXY GRINDO V4 -->
                 <div class="card" id="card-proxy-grindo-v4">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: RECIENTE</span>
@@ -812,7 +857,7 @@
                     </div>
                 </div>
 
-                <!-- NUEVA TARJETA: CUBAN PROXY ACTUALIZADO -->
+                <!-- TARJETA 12: CUBAN PROXY V3 -->
                 <div class="card" id="card-cuban-proxy-v3">
                     <div class="card-header">
                         <span class="card-date">📅 SUBIDO: RECIENTE</span>
@@ -835,6 +880,96 @@
                     </div>
                 </div>
 
+                <!-- TARJETA 13: THE KING CHEATS V301 -->
+                <div class="card" id="card-the-king-cheats-v301">
+                    <div class="card-header">
+                        <span class="card-date">📅 SUBIDO: RECIENTE</span>
+                        <div class="tag-group">
+                            <span class="tag-new">👑 THE KING V301</span>
+                            <span class="tag-tested">🟢 TODAS LAS REGIONES / NO CRASH</span>
+                        </div>
+                    </div>
+                    <h3>THE KING CHEATS V301 PARA TODAS LAS REGIONES NO CRASH 🟢</h3>
+                    <p>• 👑 <b>Funcionando em todos Android / Working on all Android devices!</b><br>
+                    • 🟢 <b>Sin errores, sin crash y para todas las regiones.</b><br>
+                    • 🔑 <b>Generador de Keys Oficial incluido abajo.</b></p>
+
+                    <button class="btn btn-mediafire" onclick="startDownloadWithTimer('https://www.mediafire.com/file/vapm7r7alyi7tia/TheKingCheatsSF_V301.apk/file')">📥 Descargar The King Cheats V301 (.apk)</button>
+                    <button class="btn btn-mediafire" onclick="startDownloadWithTimer('https://www.mediafire.com/file/vukwforhccppb7k/The_King_Cheats_Key.apk/file')" style="background: linear-gradient(135deg, #333, #111);">🔑 Descargar Generador de Keys TK (.apk)</button>
+                    
+                    <div class="card-att">
+                        <span class="att-text">@andresk1ng</span>
+                        <button class="share-card-btn" onclick="shareCard('card-the-king-cheats-v301', 'THE KING CHEATS V301')">🔗 Compartir</button>
+                    </div>
+                </div>
+
+                <!-- TARJETA 14: GRINGO XP V3 -->
+                <div class="card" id="card-gringo-xp-v3">
+                    <div class="card-header">
+                        <span class="card-date">📅 SUBIDO: RECIENTE</span>
+                        <div class="tag-group">
+                            <span class="tag-new">⚡ GRINGO XP V3</span>
+                            <span class="tag-tested">🔥 PROXY VPN</span>
+                        </div>
+                    </div>
+                    <h3>⚡ 𝙂𝙍𝙄𝙉𝙂𝙊 𝙓𝙋 𝙋𝙍𝙊𝙓𝙔 𝙑𝙋𝙉 𝙑3 ⚡</h3>
+                    <p>• 🔑 <b>Genera tu key adentro del APK.</b><br>
+                    • 🎯 <b>Aim Collider:</b> Pescoço, cabeça, peito<br>
+                    • 👁️ <b>ESP Marker:</b> Moco<br>
+                    • 📍 <b>ESP Draw:</b> Line, Box, Distance<br>
+                    • ⚡ <b>ESP Koda:</b> Ray X<br>
+                    • 🪽 <b>Fly Hack:</b> HitFly | 🥶 Freeze | 👻 Ghost | 🌀 Teleport<br>
+                    • 💡 <i>Si te banea en tu región cámbiate a Norte América.</i></p>
+
+                    <button class="btn btn-mediafire" onclick="startDownloadWithTimer('https://www.mediafire.com/file/wczajk8wkpfq19d/GRINGO+XP+PROXY+VPN+V3.apk/file')">📥 Descargar Gringo XP V3 (.apk)</button>
+                    <a href="https://whatsapp.com/channel/0029Vb8MejvKLaHfkVTKNL2L" target="_blank" class="btn btn-key" style="background: linear-gradient(135deg, #128c7e, #075e54);">📌 Canal de Actualizaciones (WhatsApp)</a>
+                    
+                    <div class="card-att">
+                        <span class="att-text">@andresk1ng</span>
+                        <button class="share-card-btn" onclick="shareCard('card-gringo-xp-v3', '⚡ 𝙂𝙍𝙄𝙉𝙂𝙊 𝙓𝙋 𝙋𝙍𝙊𝙓𝙔 𝙑𝙋𝙉 𝙑3')">🔗 Compartir</button>
+                    </div>
+                </div>
+
+                <!-- TARJETA 15: KURAMA MOD -->
+                <div class="card" id="card-kurama-mod">
+                    <div class="card-header">
+                        <span class="card-date">📅 SUBIDO: RECIENTE</span>
+                        <div class="tag-group">
+                            <span class="tag-new">☯️ KURAMA MOD</span>
+                            <span class="tag-tested">🔥 FF NORMAL</span>
+                        </div>
+                    </div>
+                    <h3>☯️ KURAMA MOD 🔥</h3>
+                    <p>• 📱 <b>King VisiÓn optimizado para Free Fire Normal.</b><br>
+                    • 🔑 <b>Credenciales de Acceso:</b> Copia tu usuario y contraseña abajo.</p>
+
+                    <div class="key-container" style="flex-direction: column; align-items: stretch; gap: 6px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="key-text">👤 USUARIO: <b>H4XJITU</b></span>
+                            <button class="copy-btn" onclick="navigator.clipboard.writeText('H4XJITU').then(()=>alert('✅ ¡Usuario copiado!'))">Copiar Usuario</button>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 6px;">
+                            <span class="key-text">🔑 CONTRASEÑA: <b>H4XJITU</b></span>
+                            <button class="copy-btn" onclick="navigator.clipboard.writeText('H4XJITU').then(()=>alert('✅ ¡Contraseña copiada!'))">Copiar Clave</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-mediafire" onclick="startDownloadWithTimer('https://www.mediafire.com/file/v6v9vp0zuxd9lwc/%25+%25𝙆𝙄𝙉𝙂メ𝙑%25CC%25B8𝙄%25CC%25B8𝙎%25CC%25B8𝙄%25CC%25B8𝙊%25CC%25B8𝙉%25CC%25B8+%25F0%259F%2591%2591%25E2%259A%25A1sign.apk/file')">📥 Descargar Kurama Mod (.apk)</button>
+                    <a href="https://whatsapp.com/channel/0029Vb8MejvKLaHfkVTKNL2L" target="_blank" class="btn btn-key" style="background: linear-gradient(135deg, #128c7e, #075e54);">🧟‍♀️ Canal Oficial de WhatsApp</a>
+                    
+                    <div class="card-att">
+                        <span class="att-text">@andresk1ng</span>
+                        <button class="share-card-btn" onclick="shareCard('card-kurama-mod', '☯️ KURAMA MOD')">🔗 Compartir</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CONTROLES DE PAGINACIÓN INFERIOR -->
+            <div class="pagination-container" id="paginationControlsBottom">
+                <button class="page-btn" id="prevBtnBottom" onclick="changePage(-1)">⬅️ ANTERIOR</button>
+                <span class="page-indicator" id="pageIndicatorBottom">PÁGINA 1 DE 1</span>
+                <button class="page-btn" id="nextBtnBottom" onclick="changePage(1)">SIGUIENTE ➡️</button>
             </div>
         </div>
 
@@ -854,6 +989,9 @@
 
     <script>
         document.oncontextmenu = () => false;
+
+        let currentPage = 1;
+        const itemsPerPage = 15;
 
         function toggleContactOptions() {
             let box = document.getElementById('contactOptionsBox');
@@ -878,22 +1016,57 @@
                     home.classList.add('active');
                 }
                 
-                checkCardLimit();
+                updatePagination();
             }, 350);
         }
 
-        function checkCardLimit() {
+        function updatePagination() {
             let container = document.getElementById('cardsContainer');
             if (!container) return;
-            let cards = container.getElementsByClassName('card');
             
-            while (cards.length > 15) {
-                container.removeChild(cards[cards.length - 1]);
-            }
+            // Buscar todas las tarjetas de la sección general
+            let cards = Array.from(container.getElementsByClassName('card'));
+            let totalCards = cards.length;
+            let totalPages = Math.ceil(totalCards / itemsPerPage) || 1;
+
+            if (currentPage > totalPages) currentPage = totalPages;
+            if (currentPage < 1) currentPage = 1;
+
+            let startIndex = (currentPage - 1) * itemsPerPage;
+            let endIndex = startIndex + itemsPerPage;
+
+            // Mostrar solo las 15 tarjetas correspondientes a la página actual
+            cards.forEach((card, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // Actualizar textos y botones
+            let indicatorText = `PÁGINA ${currentPage} DE ${totalPages} (TOTAL: ${totalCards})`;
+            document.getElementById('pageIndicatorTop').innerText = indicatorText;
+            document.getElementById('pageIndicatorBottom').innerText = indicatorText;
+            document.getElementById('card-counter').innerText = `📌 ARCHIVOS TOTALES: ${totalCards} (15 por página)`;
+
+            let prevDisabled = currentPage === 1;
+            let nextDisabled = currentPage === totalPages;
+
+            document.getElementById('prevBtnTop').disabled = prevDisabled;
+            document.getElementById('prevBtnBottom').disabled = prevDisabled;
+            document.getElementById('nextBtnTop').disabled = nextDisabled;
+            document.getElementById('nextBtnBottom').disabled = nextDisabled;
+        }
+
+        function changePage(direction) {
+            currentPage += direction;
+            updatePagination();
+            window.scrollTo({ top: 300, behavior: 'smooth' });
         }
 
         window.onload = function() {
-            checkCardLimit();
+            updatePagination();
         };
 
         function startDownloadWithTimer(url) {
@@ -919,7 +1092,11 @@
         function filterCards() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             document.querySelectorAll('.card').forEach(card => {
-                card.style.display = card.innerText.toLowerCase().includes(input) ? "block" : "none";
+                if (input === "") {
+                    updatePagination();
+                } else {
+                    card.style.display = card.innerText.toLowerCase().includes(input) ? "block" : "none";
+                }
             });
         }
 
